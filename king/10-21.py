@@ -15,3 +15,4 @@ saveFp.close()
 window.mainloop()
 
 # jpg;*.jpeg is not a valid allowedFileType because it cannot be converted to a UTType
+# 위에 쓴 에라남 
