@@ -1,0 +1,16 @@
+class Family:
+    lastname = "park"
+    def getLastname(self): 
+        return Family.lastname
+
+Family.lastname = "suh"
+
+a = Family()
+print(a.lastname)
+
+b = Family()
+print(b.lastname)
+
+print(id(Family.lastname))
+print(id(a.lastname))
+print(id(b.lastname))

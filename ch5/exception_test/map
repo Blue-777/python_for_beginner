@@ -1,0 +1,12 @@
+'''def two_times(numberList):
+    result = [ ]
+    for number in numberList:
+        result.append(number*2)
+    return result
+
+result = two_times([1, 2, 3, 4])
+print(result)'''
+
+print(list(map(lambda a: a//10000, [1000000, 3000000, 6000000, 400000000])))
+
+
