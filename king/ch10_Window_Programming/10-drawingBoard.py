@@ -16,7 +16,7 @@ def mouseDrop(event):
     canvas.create_line(x1, y1, x2, y2, width = penWidth, fill = penColor)
     
 def getColor():
-    global pencolor
+    global penColor
     color = askcolor()
     penColor = color[1]
     
