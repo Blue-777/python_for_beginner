@@ -18,23 +18,17 @@ def func_exit():
 def zoom(): 
     global photo, pLabel
     value = askinteger("확대배수", "확대배수 입력 하세요(2~8)", minvalue = 2, maxvalue = 8)
-    print(photo.filename)
-    photo.zoom(4, 4)
+    photo = photo.zoom(value, value)
     pLabel.configure(image = photo)
-    pLabel.image = photo
+    pLabel.image = photo 
     
 def subsample(): 
     global photo, pLabel
-    pLabel = Label(window, image = photo)
-    pLabel.pack()
     value = askinteger("축소배수", "축소배수 입력 하세요(2~8)", minvalue = 2, maxvalue = 8)
-    # label1.configure(text = str(value))
-    # pLabel.pack(expand = label1)
+    photo = photo.subsample(value, value)
+    pLabel.configure(image = photo)
+    pLabel.image = photo 
     
-    # label1 = Label(window, text = "entered value")
-    # label1.pack()
-    # value = askinteger("확대배수", "확대배수 입력 하세요(2~8)", minvalue = 2, maxvalue = 8)
-    # label1.configure(text = str(value))
     
 window = Tk()
 window.geometry("400x400")
