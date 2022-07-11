@@ -1,3 +1,4 @@
+# 프로그램 2) 명화 감상하기
 from tkinter import * 
 from tkinter.filedialog import * 
 

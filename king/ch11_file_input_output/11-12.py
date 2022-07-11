@@ -1,7 +1,9 @@
 # 프로그램 2) 흑백 사진 출력 
 
-from mimetypes import init
 from tkinter import *
+
+canvas = None
+XSIZE, YSIZE = 256, 256
 
 def loadImage(fname):
     global image, XSIZE, YSIZE
@@ -22,11 +24,10 @@ def displayImage(image):
     rgbString = ""
     for i in range(0, XSIZE):
         tmpString = ""
-        forString = ""
         for k in range(0, YSIZE):
             data = image[i][k]
-            tmpString += "#%02x%02x%02x " %(data, data, data)
-        rgbString += "{" + tmpString + "}"
+            tmpString += "#%02x%02x%02x "% (data, data, data)
+        rgbString += "{" + tmpString + "} "
     paper.put(rgbString)
 
 ## global variable declaration part ##
@@ -43,7 +44,7 @@ paper = PhotoImage(width = XSIZE, height = YSIZE)
 canvas.create_image((XSIZE/2, YSIZE/2), image = paper, state = "normal")
 
 # file --> memory
-filename = 'address?????' ##
+filename = 'RAW/tree.raw' 
 loadImage(filename)
 
 # memory --> screen

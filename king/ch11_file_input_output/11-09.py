@@ -30,7 +30,7 @@ while True:
         chNum = ord(ch)
         chNum = chNum + secu
         ch2 = chr(chNum)
-        outStr = outStr + 2
+        outStr = outStr + ch2
         
     outFp.write(outStr)
     

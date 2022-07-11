@@ -1,4 +1,4 @@
-# 이진 파일의 복사 
+# 이진 파일의 복사 -> 이진 파일 = 실행 파일(window: exe. mac: x)
 
 inFp, outFp = None, None 
 inStr = ""
