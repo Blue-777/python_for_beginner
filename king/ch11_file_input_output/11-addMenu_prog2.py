@@ -118,7 +118,7 @@ filename = ''   # file name(global variable)
 ## main code part ##
 if __name__ == "__main__":
     window = Tk()
-    window.title("흑백 사진 보기(menu")
+    window.title("흑백 사진 보기(menu)")
 
     # add menu
     mainMenu = Menu(window)

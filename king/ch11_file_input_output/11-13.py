@@ -1,4 +1,4 @@
-myStr = 'ython everyday. :)'
+myStr = 'python is fun. I only study python everyday. :)'
 strPosList = []
 index = 0
 
@@ -13,4 +13,4 @@ while True:
     
 print('python letter position -->', strPosList)
 
-# valueError가 나는 이유는 0번째와 28번째 python이 나온 이후로 더 이상 python이 없어서 
+# valueError가 나는 이유: while 문에 break가 없어서 무한 루프를 도는데 첫째 라인 myStr에 있는 str의 0번째와 28번째 python이 나온 이후로 더 이상 python이 없어서 
