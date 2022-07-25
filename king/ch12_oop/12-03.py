@@ -1,4 +1,4 @@
-# 생성자의 기본: 기본 생성자 
+# 의 기본: 기본  
 
 ## class declaration part ##
 class Car:
