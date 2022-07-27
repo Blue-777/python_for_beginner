@@ -1,11 +1,12 @@
 import sqlite3
 
+## var declaration part
 con, cur = None, None
 data1, data2, data3, data4 = "", "", "", ""
 sql=""
 
-## 메인 코드 부분 ##
-con = sqlite3.connect("C:/CookPython/naverDB")  # DB가 저장된 폴더까지 지정
+## main code part 
+con = sqlite3.connect("C:/Users/Donge/OneDrive/Documents/python_for_beginner/python_for_beginner-1/naverDB")  # DB가 저장된 폴더까지 지정
 cur = con.cursor()
 
 while (True) :
