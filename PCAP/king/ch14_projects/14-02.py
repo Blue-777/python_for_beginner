@@ -4,6 +4,40 @@ from tkinter.simpledialog import *
 from PIL import Image, ImageFilter, ImageEnhance, ImageOps
 
 ## function declaration part 
+def displayImage(img, width, height):
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    
+    window.geometry(str(width)+"x"+str(height))
+    if canvas != None:
+        canvas.destroy()
+        
+    canvas = Canvas(window, width = width, height = height)
+    paper = PhotoImage(width = width, height = height)
+    canvas.create_image((width/2, height/2), image = paper, state = 'normal')
+    rgbString = ""
+    rgbImage = img.convert('RGB')
+    for i in range(0, height):
+        tmpString = ""
+        for k in range(0, width):
+            r, b, g = rgbImage.getpixel((k, i))
+            tmpString += "#%02x%02x%02x " %(r, g, b)     
+            tmpString += "{" + tmpString + "} "
+        paper.put(rgbString)
+        canvas.pack()
+        
+def func_open():
+    global window, canvas, paper, photo, photo2, oriX, oriY 
+    readFp = askopenfilename(parent = window, filetypes = (("all drawing files", "*.jpg; *.jpeg; *.bmp; *.png; *.tif; *.gif"), ("all files", "*.*")))
+    photo = Image.open(readFp).convert('RGB')
+    oriX = photo.width
+    oriY = photo.height 
+    
+    photo2 = photo.copy()
+    newX = photo2.width
+    newY = photo2.height 
+    displayImage(photo2, newX, newY)
+    
+## function declaration part 
 def displayImage():     # implemented at code 14-02.py 
     pass
 
