@@ -6,7 +6,7 @@ data1, data2, data3, data4 = "", "", "", ""
 row = ""
 
 ## main code part 
-con = sqlite3.connect("C:/Users/Donge/OneDrive/Documents/python_for_beginner/python_for_beginner-1/naverDB")  # DB가 저장된 폴더까지 지정
+con = sqlite3.connect("C:/Users/Donge/downloads/CookPython/naverDB")  # DB가 저장된 폴더까지 지정
 cur = con.cursor()
 
 cur.execute("SELECT * FROM userTable")
