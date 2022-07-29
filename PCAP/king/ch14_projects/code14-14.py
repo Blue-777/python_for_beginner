@@ -1,10 +1,10 @@
 import pygame
-import random
+import random 
 import sys
 
 
 ## 함수 선언 부분 ##
-# @기능 2-5 : 매개변수로 받은 객체를 화면에 그리는 함수를 선언한다.
+# @기능 2-5 : 매개변수로 받은 객체를 화면에 그리는 함수를 선언한다. ㅕㅕㅕ
 def paintEntity(entity, x, y) : 
    monitor.blit(entity, (int(x), int(y)))
 

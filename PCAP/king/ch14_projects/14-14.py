@@ -1,4 +1,4 @@
-# Hit the space monster and calculate the score(completion of [program 2])
+# Hit the space monster and calculate the score(completion of [program 2]) ㅑㅑㅑ
 
 import pygame 
 import random 
