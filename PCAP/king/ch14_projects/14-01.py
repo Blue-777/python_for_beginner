@@ -1,3 +1,5 @@
+# menu implementation & function declaration 
+
 from tkinter import*
 from tkinter.filedialog import * 
 from tkinter.simpledialog import *

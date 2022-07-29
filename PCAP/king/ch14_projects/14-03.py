@@ -1,9 +1,10 @@
-# image opend and print 
+# save image     
 
 from tkinter import*
 from tkinter.filedialog import * 
 from tkinter.simpledialog import *
 from PIL import Image, ImageFilter, ImageEnhance, ImageOps
+from tkinter.filedialog import asksaveasfile
 
 ## function declaration part 
 def displayImage(img, width, height):
@@ -38,13 +39,19 @@ def func_open():
     newX = photo2.width
     newY = photo2.height 
     displayImage(photo2, newX, newY)
+
+def func_save():
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    
+    if photo2 == None:
+        return 
+    saveFp = asksaveasfile(parent = window, mode = "w", defaultextension = ".jpg", filetypes = (("JPG file", "*.jpg; *.jpeg"), ("all files", "*.*")))
+    
+    photo2.save(saveFp.name)
     
 ## function declaration part 
-def func_save():    # implemented at code 14-03.py 
-    pass
-
 def func_exit():   
-    pass
+    exit()
     
 def func_zoomin():   # implemented at code 14-04.py 
     pass
