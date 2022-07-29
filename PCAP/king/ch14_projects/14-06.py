@@ -1,4 +1,4 @@
-# image opend and print 
+# image rotation   
 
 from tkinter import*
 from tkinter.filedialog import * 
@@ -38,27 +38,61 @@ def func_open():
     newX = photo2.width
     newY = photo2.height 
     displayImage(photo2, newX, newY)
-    
-def func_save():    # implemented at code 14-03.py 
-    pass
 
+def func_save():
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    
+    if photo2 == None:
+        return 
+    saveFp = asksaveasfile(parent = window, mode = "w", defaultextension = ".jpg", filetypes = (("JPG file", "*.jpg; *.jpeg"), ("all files", "*.*")))
+    
+    photo2.save(saveFp.name)
+    
 def func_exit():   
-    pass
+    exit()
     
-def func_zoomin():   # implemented at code 14-04.py 
-    pass
+def func_zoomin():   
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    scale = askinteger("zoom in", "Enter the magnification to enlarge", minvalue = 2, maxvalue = 4)
+    photo2 = photo.copy()
+    photo2 = photo2.resize((int(oriX*scale), int(oriY*scale)))
+    newX = photo2.width 
+    newY = photo2.height 
+    displayImage(photo2, newX, newY)
 
-def func_zoomout():   # implemented at code 14-04.py
-    pass 
+def func_zoomout():  
+    global window, canvas, paper, photo, photo2, oriX, oriY 
+    scale = askinteger("zoom out", "Enter the magnification to reduce", minvalue = 2, maxvalue = 4)
+    photo2 = photo.copy()
+    photo2  = photo2.resize((int(oriX/scale), int(oriY/scale)))
+    newX = photo2.width 
+    newY = photo2.height 
+    displayImage(photo2, newX, newY)
 
-def func_mirror1():  # implemented at code 14-05.py
-    pass 
+def func_mirror1(): 
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    photo2 = photo.copy()
+    photo2 = photo2.transpose(Image.FLIP_TOP_BOTTOM)
+    newX = photo2.width
+    newY = photo2.height 
+    displayImage(photo2, newX, newY)
 
-def func_mirror2():  # implemented at code 14-05.py
-    pass
+def func_mirror2():  
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    photo2 = photo.copy()
+    photo2 = photo2.transpose(Image.FLIP_LEFT_RIGHT)
+    newX = photo2.width
+    newY = photo2.height 
+    displayImage(photo2, newX, newY)
 
-def func_rotatoe():     # implemented at code 14-06.py
-    pass
+def func_rotatoe():     
+    global window, canvas, paper, photo, photo2, oriX, oriY
+    degree = askinteger("rotate", "Enter the angle to rotate", minvalue = 0, maxvalue = 360)
+    photo2 = photo.copy()
+    photo2 = photo2.rotate(degree, expand = True)
+    newX = photo2.width
+    newY = photo2.height 
+    displayImage(photo2, newX, newY)
 
 def func_bright():  # implemented at code 14-07.py
     pass

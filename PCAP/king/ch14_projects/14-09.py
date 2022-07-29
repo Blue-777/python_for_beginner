@@ -1,4 +1,4 @@
-# completion of mini photoshop - same as 14-09.py
+# change image to black and white(completion of [program 1])
 
 from tkinter import*
 from tkinter.filedialog import * 

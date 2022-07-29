@@ -48,7 +48,6 @@ def func_save():
     
     photo2.save(saveFp.name)
     
-## function declaration part 
 def func_exit():   
     exit()
     

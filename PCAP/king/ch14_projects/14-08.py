@@ -1,4 +1,4 @@
-# completion of mini photoshop - same as 14-09.py
+# Add special effects to images
 
 from tkinter import*
 from tkinter.filedialog import * 
@@ -129,13 +129,8 @@ def func_embo():
     newY = photo2.height 
     displayImage(photo2, newX, newY)
 
-def func_bw():    
-    global window, canvas, paper, photo, photo2, oriX, oriY
-    photo2 = photo.copy()
-    photo2 = ImageOps.grayscale(photo2)
-    newX = photo2.width
-    newY = photo2.height 
-    displayImage(photo2, newX, newY)
+def func_bw():    # implemented at code 14-08.py
+    pass
 
 ## global var declaraiton part
 window, canvas, paper = None, None, None
