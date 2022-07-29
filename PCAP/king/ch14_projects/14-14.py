@@ -8,6 +8,12 @@ import sys
 def paintEntity(entity, x, y) :
        monitor.blit(entity, (int(x), int(y)))
        
+# declare a func that write scores on the screen 
+def writeScore(score):
+    myfont = pygame.font.Font('NanumGothic.ttf', 20)     # korean font 
+    txt = myfont.render(u'destroyed space monster number(s): ' +str(score), True, (255-r, 255-g, 255-b))
+    monitor.blit(txt, (10, sheight - 40))
+       
 def playGame():
     global monitor, ship, monster, missile
     
@@ -29,6 +35,9 @@ def playGame():
     
     # Initialize missile coordinates(좌표)
     missileX, missileY = None, None         # None means that no missiles will be fired.
+    
+    # Declare a variable to store the hit number of space monsters.
+    fireCount = 0
     
     # infinite loop
     while True:
@@ -88,6 +97,22 @@ def playGame():
               missileX, missileY = None, None       # bullets disappear.
         if missileX != None: # If you have ever fired a missile, draw a missile.
             paintEntity(missile, missileX, missileY)
+            # Check if the space monster was hit by a missile
+            if (monsterX < missileX and missileX < monsterX + monsterSize[0]) and\
+                (monsterY < missileY and missileY < monsterY + monsterSize[1]):
+                fireCount += 1
+                
+                # initialize space monster (prepare image randomly)
+                monster = pygame.image.load(random.choice(monsterImage))
+                monsterSize = monster.get_rect().size
+                monsterX = 0
+                monsterY = random.randrange(0, int(swidth*0.3))
+                monsterSpeed = random.randrange(1, 5)
+                
+                # initialize missile
+                missileX, missileY = None, None     # bullets disappear
+        # call the func that write scores on the screen 
+        writeScore(fireCount)
         
         # Update the screen.
         pygame.display.update()
